@@ -16,7 +16,7 @@ public class Tekst {
 			else if (Character.isLetter(text.charAt(i))) {
 				countLetters++;
 			}
-			else if (Character.isWhitespace(text.charAt(i)) || !Character.isLetterOrDigit(text.charAt(i))) {
+			else {
 				CountOther++;
 			}	
 			
