@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class SlonchetoLoni {
+
+	public static void main(String[] args) {
+
+		Scanner input = new Scanner(System.in);
+		String str = input.nextLine();
+		int result = 0;
+		for (int i = 0; i < str.length(); i += 2) {
+			char oddNumCh = str.charAt(i);
+			int num = Character.getNumericValue(oddNumCh);
+			result += num;
+		}
+		System.out.println(result);
+	}
+}
