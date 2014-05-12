@@ -1,0 +1,24 @@
+package bgcoder;
+
+import java.util.Scanner;
+
+public class Sum {
+
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		String digits = in.nextLine();
+		int count = 0;
+		int result = 0;
+		for (int i = 0; i < digits.length(); i++) {
+			if (i % 2 == 0) {
+				char oddNum = digits.charAt(i);
+				String position = "" + oddNum;
+				int values = Integer.parseInt(position);
+				result = result + values;
+				count++;
+			}
+		}
+		System.out.println(result);
+	}
+
+}
