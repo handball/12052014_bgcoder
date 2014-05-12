@@ -1,0 +1,50 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Scanner;
+
+
+public class HelloJavaProj {
+
+	public static int[] Sort(int[] arr)
+	{
+		int[] new_arr = arr;
+		for (int i = 0; i < new_arr.length; i++) {
+			for (int j = 0; j < new_arr.length; j++) {
+				if (new_arr[i] > new_arr[j]) {
+					int temp = new_arr[i];
+					new_arr[i] = new_arr[j];
+					new_arr[j] = temp;
+				}
+			}
+		}
+		return new_arr;
+	}
+	public static int getIndex(int i, int[] scores)
+	{
+		int index = -1;
+		for (int j = 0; j < scores.length; j++) {
+			if (scores[j] == i ) {
+				index = j;
+				break;
+			}
+		}
+		return index;
+	}
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		int n = Integer.parseInt(input.next());
+		
+		int[] scores = new int[n];
+		
+		for (int i = 0; i < n; i++) {
+			scores[i] = Integer.parseInt(input.next());
+		}
+		int[] new_arr = scores;
+		int[] sortedScores = Sort(new_arr);
+		
+		int index = getIndex(sortedScores[1], scores);
+		System.out.printf("%d", index+1);
+		
+	}
+
+}
