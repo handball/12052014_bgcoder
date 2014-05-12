@@ -7,7 +7,8 @@ public class HelloJavaProj {
 
 	public static int[] Sort(int[] arr)
 	{
-		int[] new_arr = arr;
+		int[] new_arr = new int[arr.length];
+		System.arraycopy(arr, 0, new_arr, 0, arr.length);
 		for (int i = 0; i < new_arr.length; i++) {
 			for (int j = 0; j < new_arr.length; j++) {
 				if (new_arr[i] > new_arr[j]) {
@@ -39,8 +40,8 @@ public class HelloJavaProj {
 		for (int i = 0; i < n; i++) {
 			scores[i] = Integer.parseInt(input.next());
 		}
-		int[] new_arr = scores;
-		int[] sortedScores = Sort(new_arr);
+		
+		int[] sortedScores = Sort(scores);
 		
 		int index = getIndex(sortedScores[1], scores);
 		System.out.printf("%d", index+1);
