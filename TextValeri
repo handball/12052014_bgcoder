@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+
+public class Tekst {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		String text = input.nextLine();
+		int countDigits = 0;
+		int countLetters = 0;
+		int CountOther = 0;
+		for (int i = 0; i < text.length(); i++) {
+			if (Character.isDigit(text.charAt(i))) {
+				countDigits++;
+			}
+			else if (Character.isLetter(text.charAt(i))) {
+				countLetters++;
+			}
+			else if (Character.isWhitespace(text.charAt(i)) || !Character.isLetterOrDigit(text.charAt(i))) {
+				CountOther++;
+			}	
+			
+		}
+		if (countDigits > countLetters) {
+			if (countDigits > CountOther) {
+				System.out.println("C");
+			}
+			else {
+				System.out.println("Z");
+			}
+		}
+		else {
+			if (countLetters > CountOther) {
+				System.out.println("B");
+			}
+			else {
+				System.out.println("Z");
+			}
+		}
+	}
+
+}
